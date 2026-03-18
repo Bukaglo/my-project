@@ -1,0 +1,11 @@
+{
+  "name": "base-contract-checker",
+  "version": "1.0.0",
+  "description": "Simple Base smart contract checker",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "ethers": "^6.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
