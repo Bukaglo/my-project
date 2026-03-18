@@ -1,0 +1,9 @@
+Replace:
+
+0xYourContractAddressHere
+
+with a real contract on Base
+
+Add more functions to ABI like:
+
+"function balanceOf(address) view returns (uint256)"
