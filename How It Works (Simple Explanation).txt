@@ -1,0 +1,11 @@
+Connects to Base using an RPC URL
+
+Uses ethers.js
+
+Reads public data from a smart contract:
+
+Token name
+
+Symbol
+
+Supply
