@@ -1,0 +1,36 @@
+import { ethers } from "ethers";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+// Connect to Base
+const provider = new ethers.JsonRpcProvider(process.env.BASE_RPC_URL);
+
+// Example contract (ERC20 token)
+const contractAddress = "0xYourContractAddressHere";
+
+// Minimal ABI (only what we need)
+const abi = [
+  "function name() view returns (string)",
+  "function symbol() view returns (string)",
+  "function totalSupply() view returns (uint256)"
+];
+
+async function checkContract() {
+  try {
+    const contract = new ethers.Contract(contractAddress, abi, provider);
+
+    const name = await contract.name();
+    const symbol = await contract.symbol();
+    const supply = await contract.totalSupply();
+
+    console.log("Token Name:", name);
+    console.log("Symbol:", symbol);
+    console.log("Total Supply:", supply.toString());
+
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+}
+
+checkContract();
